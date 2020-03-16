@@ -36,6 +36,14 @@
                 <p class="card-text">
                   would we want to see more info here?
                 </p>
+                <h5>Did you answer correctly?</h5>
+                <form action="" id="right-or-wrong">
+                  <input type="radio" id="correct" name="answer" value="correct">
+                  <label for="answer">Yes</label>
+                  <input type="radio" id="incorrect" name="answer" value="incorrect">
+                  <label for="answer">No</label><br>
+                  <input type="submit">
+                </form>
                 <button class="btn btn-primary" id="next-button">
                   Next Question
                 </button>
@@ -46,6 +54,7 @@
       </div>
     </div>
     <div class="footer">
+      <p id="calculation">You have <span id="correct-answers">0</span> correct answers, and <span id="incorrect-answers">0</span> incorrect answers.</p>
       <h5>Questions and Answers taken from Jeopardy</h5>
     </div>
   </body>

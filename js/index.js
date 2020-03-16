@@ -25,11 +25,28 @@ function publishTrivia(trivia) {
   answerNode.querySelector(".card-text").textContent = trivia.answer;
 }
 
+//working on adding numbers to calculation on bottom.
+function calculateAnswers(answer) {
+  const span = document.getElementById("calculation");
+  let correct = document.getElementById("correct-answers");
+  let newNumber = document.createElement("span")
+  let incorrect = document.getElementById("incorrect-answers");
+  if (answer === "correct") {
+    newNumber.innerText = parseInt(correct.innerText) + 1;
+    newNumber.id = "correct-answers";
+    span.replaceChild(newNumber, correct);
+  } else {
+    newNumber.innerText = parseInt(incorrect.innerText) + 1;
+    newNumber.id = "incorrect-answers";
+    span.replaceChild(newNumber, incorrect);
+  }
+  
+  // p.innerText = answer;
+};
+
 document.addEventListener("DOMContentLoaded", function() {
   fetchTrivia();
-  document
-    .getElementById("answer-button")
-    .addEventListener("click", function() {
+  document.getElementById("answer-button").addEventListener("click", function() {
       answerNode.style.display = "block";
       console.log("hello");
     });
@@ -37,6 +54,12 @@ document.addEventListener("DOMContentLoaded", function() {
     answerNode.style.display = "none";
     fetchTrivia();
   });
-});
 
-//YOUR CODE HERE
+  const form = document.getElementById("right-or-wrong")
+  form.addEventListener("submit", function(event){
+    event.preventDefault();
+    const answer = event.target["answer"].value;
+    calculateAnswers(answer);
+  })
+
+});
