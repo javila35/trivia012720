@@ -4,9 +4,9 @@ Let's build out a trivia application using the skills we've learned over the pas
 
 As a user I should be able to:
 
-    * See a question upon page load.
-    * Click a button to see the answer
-    * Click a button to hide the answer, and load the next question
+    <!-- * See a question upon page load. -->
+    <!-- * Click a button to see the answer -->
+    <!-- * Click a button to hide the answer, and load the next question -->
 
 Bonus:
 
