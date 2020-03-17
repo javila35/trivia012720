@@ -25,12 +25,11 @@ function publishTrivia(trivia) {
   answerNode.querySelector(".card-text").textContent = trivia.answer;
 }
 
-//working on adding numbers to calculation on bottom.
 function calculateAnswers(answer) {
   const span = document.getElementById("calculation");
-  let correct = document.getElementById("correct-answers");
-  let newNumber = document.createElement("span")
-  let incorrect = document.getElementById("incorrect-answers");
+  const correct = document.getElementById("correct-answers");
+  const incorrect = document.getElementById("incorrect-answers");
+  let newNumber = document.createElement("span");
   if (answer === "correct") {
     newNumber.innerText = parseInt(correct.innerText) + 1;
     newNumber.id = "correct-answers";
@@ -40,8 +39,6 @@ function calculateAnswers(answer) {
     newNumber.id = "incorrect-answers";
     span.replaceChild(newNumber, incorrect);
   }
-  
-  // p.innerText = answer;
 };
 
 document.addEventListener("DOMContentLoaded", function() {
